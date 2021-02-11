@@ -4,19 +4,27 @@
 
 from youtubesearchpython import * 
 
-limit = 10 
-# first parameter is title
-allsearch = Search("Fortnite", limit=limit, region="US")
 
-result_search = allsearch.result()
-#search for links
-for i in range(limit): 
-    complete_result = result_search.get('result')[i]
-    link = complete_result.get('link')
-    print(link)
+class LinkScraper: 
+    def __init__(self, limit, topic): 
+        self.limit = limit
+        self.topic = topic
 
+    def search(self): 
+        self.links = []
+        # first parameter is title
+        self.allsearch = Search("Fortnite", limit=limit, region="US")
 
-
+        self.result_search = allsearch.result()
+        #search for links
+        for i in range(limit): 
+            self.complete_result = self.result_search.get('result')[i]
+            self.link = self.complete_result.get('link')
+            # add the link to my list. 
+            self.links.append(self.link) 
+        
+        # return the final list 
+        return self.links
 
 
 
