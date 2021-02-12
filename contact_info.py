@@ -19,24 +19,7 @@ soup = BeautifulSoup(html_page, "lxml")
 links_page = []
 
 for link in soup.findAll('a'): 
-    links.append(link.get('href'))
+    links_page.append(link.get('href'))
 
 print(links_page)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
