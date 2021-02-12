@@ -11,7 +11,7 @@ import re
 fortnite = LinkScraper(10, "fortnite")
 fortnite_links = fortnite.search()
 
-req = Request(url) 
+req = Request(fortnite_links[0]) 
 html_page = urlopen(req) 
 
 soup = BeautifulSoup(html_page, "lxml")
