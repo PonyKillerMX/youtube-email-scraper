@@ -4,25 +4,24 @@
 from bs4 import BeautifulSoup, SoupStrainer
 from link_scraper import LinkScraper
 import requests
-import pprint as pp
-import httplib2
-
+from urllib.request import Request, urlopen
+import re
 
 # this will return a list of 10 links on topic fornite 
 fortnite = LinkScraper(10, "fortnite")
 fortnite_links = fortnite.search()
 
-http = httplib2.Http()
-status, response = http.request(url)
-    #iterate through links and get contact info.  
-    # for url in links[0]: 
-   for url in links:
-        response = requests.get(url)
-        soup = BeautifulSoup(response.text, "lxml")
+req = Request(url) 
+html_page = urlopen(req) 
 
-def print
+soup = BeautifulSoup(html_page, "lxml")
 
+links_page = []
 
+for link in soup.findAll('a'): 
+    links.append(link.get('href'))
+
+print(links_page)
 
 
 
