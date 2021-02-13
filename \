@@ -19,12 +19,18 @@ class Profile:
         return (self.name + self.region)
 
 
-emilio = Profile("Mexico", "emilio")
-print(emilio.region_and_name())
-print(emilio.get_name())
-print(emilio.get.region())
-
-
+if __name__ == '__main__': 
+    # my self in this 
+    emilio = Profile("Mexico", "emilio")
+    print(emilio.region_and_name())
+    print(emilio.get_name())
+    print(emilio.get.region())
+    
+    # this is my brother as an example
+    alfredo = Profile("California", "alfredo")
+    print(alfredo.get_region())
+    print(alfredo.get_name())
+    print(alfredo.region_and_name())
 
 
 
